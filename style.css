@@ -12,3 +12,13 @@
     margin-top: 20px;
 }
 
+.form-group {
+    background-color: rgb(188, 207, 219);
+}
+
+.btn {
+    margin-top: 5px;
+    background-color: rgb(240, 240, 124);
+    color: black;
+}
+
