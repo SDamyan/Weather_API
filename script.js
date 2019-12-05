@@ -18,14 +18,15 @@
       // Store all of the retrieved data inside of an object called "response"
       .then(function(response) {
 
-        console.log(response);
+        // console.log(response);
 
-//todo add UV index (seperate function?), icon, current date    
+//todo add icon, current date    
         // Transfer content to HTML
         $(".city").html("<h3>" + response.name); //+ response.weather.icon
         $(".wind").text("Wind Speed: " + response.wind.speed);
         $(".humidity").text("Humidity: " + response.main.humidity);
         $(".temp").text("Temperature (F) " + response.main.temp);
+        $(".uv").text("Humidity: " + response.main.humidity);
 
         var lat = response.coord.lat;
         var lon = response.coord.lon;
@@ -36,19 +37,25 @@
           url: uvQuery,
           method: "GET"
         })
+
         // Store all of the retrieved data inside of an object called "response"
         .then(function(uvResponse) {
-          // TODO: Print this uv value to an HTMl DIV
-          console.log(uvResponse);
+
+          //transfer content to HTML
+          $(".uv").html("UV index: " + uvResponse[0].value);
+
+          
+          //console.log(uvResponse);
         });
-        
+
+         
     });
 
     // Log the queryURL
-    console.log(queryURL);
+    // console.log(queryURL);
 
 
-    console.log(APIKey);
+    // console.log(APIKey);
 
     //The URL to query the database for 5-day
     var queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?" +
@@ -72,16 +79,8 @@
       // The idea here is to loop through 5 days of the week
       // and calculate and index into the array of 40 data points given by the call to open weather forecast API
       // For example:
-      // Day 1: data points in the array from 0 to 7
-      // Day 2: data points in the array from 8 to 15
-      // Day 3: data points in the array from 16 to 23
-      // Day 4: data points etc etc etc
+      // Day 1: data points in the array from 0 to 7 etc.
       for (var i = 0; i < 5; i++) {
-
-        // If you have nested for-loops
-        // Outer is i
-        // Next one inner is j
-        // Next one inner is k
 
         for (var j = 0; j < 7; j++) {
           var dayTemp = temps[j + (i * 8)].main.temp;
@@ -90,14 +89,25 @@
 
         console.log(`Day ${i+1} Temp = ${dayTemp}`);
       }
-
+      //day1 variables
       var day1Data = response2.list[0];
       var day1DateText = day1Data.dt_txt;
       var day1Humidity = day1Data.main.humidity;
       var day1Temp = day1Data.main.temp;
 
       //transfer content to HTML
-      $(".date2").html(day1DateText);
-      $(".temp2").text("Temperature (F) " + day1Temp);
-      $(".humidity2").text("Humidity: " + day1Humidity);
+      $(".date1").html(day1DateText);
+      $(".temp1").text("Temp: " + day1Temp + " F");
+      $(".humidity1").text("Humidity: " + day1Humidity + "%");
+
+      //day2 variables and html transfers
+      var day2Data = response2.list[0];
+      var day2DateText = day2Data.dt_txt;
+      var day2Humidity = day2Data.main.humidity;
+      var day2Temp = day2Data.main.temp;
+
+      //transfer content to HTML
+      $(".date2").html(day2DateText);
+      $(".temp2").text("Temp: " + day2Temp + " F");
+      $(".humidity2").text("Humidity: " + day2Humidity + "%");
     });
