@@ -20,7 +20,7 @@
 
         console.log(response);
 
-//todo add UV index (seperate function?), icon, current date    
+//todo add icon, current date    
         // Transfer content to HTML
         $(".city").html("<h3>" + response.name); //+ response.weather.icon
         $(".wind").text("Wind Speed: " + response.wind.speed);
@@ -97,7 +97,7 @@
       var day1Temp = day1Data.main.temp;
 
       //transfer content to HTML
-      $(".date2").html(day1DateText);
-      $(".temp2").text("Temperature (F) " + day1Temp);
-      $(".humidity2").text("Humidity: " + day1Humidity);
+      $(".date1").html(day1DateText);
+      $(".temp1").text("Temperature (F) " + day1Temp);
+      $(".humidity1").text("Humidity: " + day1Humidity);
     });
