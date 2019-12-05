@@ -26,6 +26,7 @@
         $(".wind").text("Wind Speed: " + response.wind.speed);
         $(".humidity").text("Humidity: " + response.main.humidity);
         $(".temp").text("Temperature (F) " + response.main.temp);
+        $(".uv").text("Humidity: " + response.main.humidity);
 
         var lat = response.coord.lat;
         var lon = response.coord.lon;
@@ -72,16 +73,8 @@
       // The idea here is to loop through 5 days of the week
       // and calculate and index into the array of 40 data points given by the call to open weather forecast API
       // For example:
-      // Day 1: data points in the array from 0 to 7
-      // Day 2: data points in the array from 8 to 15
-      // Day 3: data points in the array from 16 to 23
-      // Day 4: data points etc etc etc
+      // Day 1: data points in the array from 0 to 7 etc.
       for (var i = 0; i < 5; i++) {
-
-        // If you have nested for-loops
-        // Outer is i
-        // Next one inner is j
-        // Next one inner is k
 
         for (var j = 0; j < 7; j++) {
           var dayTemp = temps[j + (i * 8)].main.temp;

@@ -1,24 +1,79 @@
 * {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    text-align: center;
+    
 }
-
+ 
 .header {
     background-color:  rgb(58, 52, 52);
-    color:  rgb(253, 253, 253);
+    color: whitesmoke;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(188, 207, 219);
 }
 
 .container {
-    margin-top: 20px;
+    margin-top: 10px;
+    padding: 20px;
+    /* border: 2px outset rgb(167, 152, 152); */
+    /* box-shadow: 0 0 3px 2px; */
+    background-color: rgb(238, 242, 245);
 }
 
 .form-group {
     background-color: rgb(188, 207, 219);
+    padding: 35px;
+    box-shadow: 0 0 3px 2px;
+    /* margin-left: -50px; */
 }
 
-.btn {
-    margin-top: 5px;
+h5 {
+    margin-top: -20px;
+}
+
+#search {
+    width: 100%;
+    margin: 0px;
+    padding: 3px;
+    
+}
+
+.fa-search {
     background-color: rgb(240, 240, 124);
     color: black;
+    padding: 7px;
+    margin-left: -20px;
+    border: 2px outset rgb(215, 218, 55);
+    
 }
 
+#austin {
+    margin-top: 20px;
+}
+
+.city-btn {
+    background-color: whitesmoke;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+#current-conditions {
+    margin-top: 15px;
+    padding-bottom: 10px;
+    border-bottom: 4px inset rgb(141, 141, 137);
+   border-left: 2px inset rgb(141, 141, 137);
+   /*   border-top: 2px outset rgb(141, 141, 137); */
+    padding-left: 30px;
+    padding-top: 10px;
+    background-color: white;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.card {
+    padding:20px;
+    background-color: blue;
+    border: 2px solid darkblue;
+    color: white;
+}
