@@ -77,3 +77,8 @@ h3 {
     border: 2px solid darkblue;
     color: white;
 }
+
+.icon {
+    background-color: blue;
+    width: 50px;
+}

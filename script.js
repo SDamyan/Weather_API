@@ -21,19 +21,23 @@
          console.log(response);
          console.log(queryURL);
 
-//todo add icon, current date    
+//todo add current date    
         // Transfer content to HTML
-         $(".date").text(response.dt);
+        $(".date").text(time);
+
         var icon = response.weather[0].icon;
         var iconUrl = "http://openweathermap.org/img/wn/" + icon + ".png"
         $(".icon").html(`<img src=${iconUrl} />`); 
+
         $(".city").html("<h3>" + response.name); 
         $(".wind").text("Wind Speed: " + response.wind.speed);
         $(".humidity").text("Humidity: " + response.main.humidity + "%");
-        $(".temp").text("Temperature " + response.main.temp + " F");
+        $(".temp").text("Temperature: " + response.main.temp + " F");
         
-        
+        //convert unix time to standard
+        var time = moment.unix(response.dt).format("MMMM Do YYYY, h:mm:ss a");
 
+        //created variables for uv index
         var lat = response.coord.lat;
         var lon = response.coord.lon;
 
@@ -84,8 +88,6 @@
 
       // The idea here is to loop through 5 days of the week
       // and calculate and index into the array of 40 data points given by the call to open weather forecast API
-      // For example:
-      // Day 1: data points in the array from 0 to 7 etc.
       for (var i = 0; i < 5; i++) {
 
         for (var j = 0; j < 7; j++) {
@@ -102,6 +104,11 @@
       var day1Humidity = day1Data.main.humidity;
       var day1Temp = day1Data.main.temp;
 
+       //icon card1
+       var icon1 = response2.list[0].weather[0].icon;
+       var iconUrl1 = "http://openweathermap.org/img/wn/" + icon1 + ".png"
+         $(".icon1").html(`<img src=${iconUrl1} />`);  
+ 
       //transfer content to HTML
       $(".date1").html(day1DateText);
       $(".temp1").text("Temp: " + day1Temp + " F");
@@ -114,11 +121,10 @@
       var day2Humidity = day2Data.main.humidity;
       var day2Temp = day2Data.main.temp;
 
-//todo: add in icon for each day
-      /* //icon
-      var icon1 = response2.weather[0].icon;
-        var iconUrl1 = "http://openweathermap.org/img/wn/" + icon1 + ".png"
-        $(".icon1").html(`<img src=${iconUrl1} />`);  */
+       //icon card2
+      var icon2 = response2.list[8].weather[0].icon;
+      var iconUrl2 = "http://openweathermap.org/img/wn/" + icon2 + ".png"
+        $(".icon2").html(`<img src=${iconUrl2} />`);  
 
       //transfer content to HTML
       $(".date2").html(day2DateText);
@@ -132,6 +138,11 @@
       var day3Humidity = day3Data.main.humidity;
       var day3Temp = day3Data.main.temp;
 
+       //icon card3
+       var icon3 = response2.list[16].weather[0].icon;
+       var iconUrl3 = "http://openweathermap.org/img/wn/" + icon3 + ".png"
+         $(".icon3").html(`<img src=${iconUrl3} />`);  
+
       //transfer content to HTML
       $(".date3").html(day3DateText);
       $(".temp3").text("Temp: " + day3Temp + " F");
@@ -143,6 +154,11 @@
      var day4Humidity = day4Data.main.humidity;
      var day4Temp = day4Data.main.temp;
 
+       //icon card4
+       var icon4 = response2.list[24].weather[0].icon;
+       var iconUrl4 = "http://openweathermap.org/img/wn/" + icon4 + ".png"
+         $(".icon4").html(`<img src=${iconUrl4} />`);  
+
      //transfer content to HTML
      $(".date4").html(day4DateText);
      $(".temp4").text("Temp: " + day4Temp + " F");
@@ -153,6 +169,11 @@
      var day5DateText = day5Data.dt_txt;
      var day5Humidity = day5Data.main.humidity;
      var day5Temp = day5Data.main.temp;
+
+       //icon card5
+       var icon5 = response2.list[32].weather[0].icon;
+       var iconUrl5 = "http://openweathermap.org/img/wn/" + icon5 + ".png"
+         $(".icon5").html(`<img src=${iconUrl5} />`);  
 
      //transfer content to HTML
      $(".date5").html(day5DateText);
