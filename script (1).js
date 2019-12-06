@@ -1,4 +1,4 @@
-  
+/*   
 //todo add search function for any city, and plug in user response to parameter in api
 
     // My API key
@@ -93,4 +93,4 @@
       $(".date1").html(day1DateText);
       $(".temp1").text("Temperature (F) " + day1Temp);
       $(".humidity1").text("Humidity: " + day1Humidity);
-    });
+    }); */
